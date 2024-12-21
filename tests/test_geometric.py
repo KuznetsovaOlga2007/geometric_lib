@@ -8,30 +8,48 @@ from calculate import calc
 
 class TestCircle:
     def test_circle_area(self):
-        assert circle.area(2) == math.pi * 2 * 2
+        radius = 2
+        expected_area = math.pi * radius ** 2
+        assert circle.area(radius) == expected_area
 
     def test_circle_perimeter(self):
-        assert circle.perimeter(2) == 2 * math.pi * 2
+        radius = 2
+        expected_perimeter = 2 * math.pi * radius
+        assert circle.perimeter(radius) == expected_perimeter
 
 
 class TestSquare:
     def test_square_area(self):
-        assert square.area(5) == 25
-        assert square.area(2) == 4
+        side1 = 5
+        side2 = 2
+        assert square.area(side1) == side1 ** 2
+        assert square.area(side2) == side2 ** 2
 
     def test_square_perimeter(self):
-        assert square.perimeter(4) == 16
-        assert square.perimeter(2) == 8
+        side1 = 4
+        side2 = 2
+        assert square.perimeter(side1) == 4 * side1
+        assert square.perimeter(side2) == 4 * side2
 
 
 class TestTriangle:
     def test_triangle_area(self):
-        assert triangle.area(6, 6, 6) == 15.588457268119896
-        assert triangle.area(8, 17, 15) == 60
+        base1, height1 = 6, 6
+        expected_area1 = 15.588457268119896
+        assert triangle.area(base1, base1, base1) == expected_area1
+        
+        base2, side_a, side_b = 8, 17, 15
+        expected_area2 = 60
+        assert triangle.area(base2, side_a, side_b) == expected_area2
 
     def test_triangle_perimeter(self):
-        assert triangle.perimeter(6, 6, 6) == 18
-        assert triangle.perimeter(8, 17, 15) == 40
+        side1 = 6
+        expected_perimeter1 = 18
+        assert triangle.perimeter(side1, side1, side1) == expected_perimeter1
+        
+        side_a, side_b, side_c = 8, 17, 15
+        expected_perimeter2 = 40
+        assert triangle.perimeter(side_a, side_b, side_c) == expected_perimeter2
 
 
 class TestCalc:
